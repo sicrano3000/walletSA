@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    # Para utilizar banco de dados postgres, descomentar configura��es
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5436/walletsa
+    username: postgres
+    password: postgres
+    hikari:
+      maximum-pool-size: 30
+      connection-timeout: 30000 # Tempo m�ximo de espera por uma conex�o do pool
+      idle-timeout: 600000 # Tempo m�ximo que uma conex�o pode permanecer inativa no pool
+      max-lifetime: 1800000 # Tempo m�ximo de vida de uma conex�o no pool
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+  # Swagger
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  main:
+    allow-bean-definition-overriding: true
+
+  messages:
+    basename: messages, i18n.list
+    fallback-to-system-locale: false
+
+springdoc:
+  paths-to-exclude: /swagger-resources/**

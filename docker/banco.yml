@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  walletsa:
+    container_name: walletsa
+    image: postgres:13.6
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /data/postgres
+      POSTGRES_DB: walletsa
+    ports:
+      - "5436:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+networks:
+  postgres:
+    driver: bridge
+volumes:
+  postgreswalletsa:
