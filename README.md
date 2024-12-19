@@ -23,3 +23,7 @@ REST API for an online payment wallet application that can be used by customers 
 ## ER Diagram
 The following ER diagram indicates the database tables and the interactions they were using.
 ![ER Diagram](ER_walletSA.png)
+
+## Start API
+Start an API and access: http://localhost:8080/swagger-ui/index.html
+![Swagger](swagger.png)
